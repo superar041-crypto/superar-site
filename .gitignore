@@ -1,0 +1,11 @@
+# Configuração real (senha do e-mail e chave secreta) – use api/config.exemplo.php como modelo
+api/config.php
+
+# Inscrições recebidas (dados pessoais dos alunos)
+api/registros/*
+!api/registros/.htaccess
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store

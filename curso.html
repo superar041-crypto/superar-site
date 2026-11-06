@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curso técnico – Superar</title>
+  <meta name="description" content="Curso técnico com aulas EAD e aulas presenciais na Superar – Cursos e Treinamentos.">
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="cursos">
+
+<main id="conteudo"></main>
+
+<script src="js/cursos-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const slug = new URLSearchParams(location.search).get("c");
+  const c = CURSOS.find((x) => x.slug === slug);
+  const main = document.getElementById("conteudo");
+
+  if (!c) {
+    main.innerHTML = `<section class="page-hero aurora"><div class="wrap"><h1>Curso não encontrado</h1>
+      <p><a class="btn btn-primary" href="cursos.html">Ver todos os cursos</a></p></div></section>`;
+  } else {
+    document.title = `${c.nome} – Superar`;
+    document.querySelector('meta[name="description"]').content = c.resumo;
+    const h = (v) => parseInt(v) || 0;
+    const total = c.parcelas * c.valorParcela;
+    const sum = (k) => c.modulos.reduce((s, m) => s + m.disciplinas.reduce((t, d) => t + h(d[k]), 0), 0);
+
+    const modulos = c.modulos.map((m, i) => {
+      const ch = m.disciplinas.reduce((t, d) => t + h(d.total), 0);
+      return `<details class="modulo"${i === 0 ? " open" : ""}>
+        <summary>${esc(m.titulo)}<small>${m.disciplinas.length} disciplinas · ${ch}h</small></summary>
+        <div class="tabela-wrap"><table class="tabela">
+          <thead><tr><th>Disciplina</th><th class="n">A distância</th><th class="n">Presencial</th><th class="n">Total</th></tr></thead>
+          <tbody>${m.disciplinas.map((d) => `<tr><td>${esc(d.nome)}</td><td class="n">${esc(d.dist)}</td><td class="n">${esc(d.pres)}</td><td class="n">${esc(d.total)}</td></tr>`).join("")}</tbody>
+        </table></div>
+      </details>`;
+    }).join("");
+
+    const faq = (c.faq || []).map((f) => `<details><summary>${esc(f.pergunta)}</summary><p>${esc(f.resposta)}</p></details>`).join("");
+    const outros = CURSOS.filter((x) => x.area === c.area && x.slug !== c.slug).slice(0, 3);
+
+    main.innerHTML = `
+      <section class="curso-hero aurora">
+        <div class="wrap">
+          <div>
+            <nav class="breadcrumb"><a href="index.html">Início</a> / <a href="cursos.html">Cursos</a> / ${esc(c.nome)}</nav>
+            <h1>${esc(c.nome)}</h1>
+            <p>${esc(c.resumo)}</p>
+            <div class="meta" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">
+              <span class="tag">${esc(c.area)}</span>
+              <span class="tag">${c.cargaHoraria.toLocaleString("pt-BR")} horas</span>
+              <span class="tag">EAD e aulas presenciais</span>
+            </div>
+          </div>
+          <img src="${c.imagem}" alt="">
+        </div>
+      </section>
+
+      <div class="wrap curso-layout">
+        <article>
+          <section><h2>O curso</h2>${c.oCurso}</section>
+          <section><h2>Área de atuação</h2>${c.areaAtuacao}</section>
+          <section><h2>O profissional</h2>${c.oProfissional}</section>
+          <section>
+            <h2>Grade curricular</h2>
+            <p class="muted">Carga horária somada da grade: ${sum("dist")}h a distância e ${sum("pres")}h presenciais.</p>
+            ${modulos}
+          </section>
+          ${faq ? `<section class="faq"><h2>Perguntas frequentes</h2>${faq}</section>` : ""}
+        </article>
+
+        <aside class="box-preco">
+          <span class="muted" style="font-size:.85rem">Investimento</span>
+          <div class="valor-grande"><small>${c.parcelas}x</small> ${fmtBRL(c.valorParcela)}</div>
+          <span class="muted" style="font-size:.85rem">Total de ${fmtBRL(total)}</span>
+          <ul>
+            <li><span>Carga horária</span><span>${c.cargaHoraria.toLocaleString("pt-BR")}h</span></li>
+            <li><span>Modalidade</span><span>EAD e aulas presenciais</span></li>
+            <li><span>Módulos</span><span>${c.modulos.length}</span></li>
+            <li><span>Acesso</span><span>Ambiente Virtual (AVA)</span></li>
+          </ul>
+          <a class="btn btn-primary" href="inscricao.html?curso=${c.slug}">Quero me inscrever</a>
+          <a class="btn btn-outline" style="margin-top:10px;width:100%" href="https://wa.me/${ESCOLA.whatsapp}?text=${encodeURIComponent("Olá! Tenho dúvidas sobre o " + c.nome)}" target="_blank" rel="noopener">Tirar dúvidas no WhatsApp</a>
+        </aside>
+      </div>
+
+      ${outros.length ? `<section class="section section-alt"><div class="wrap">
+        <h2 style="margin-bottom:28px">Outros cursos de ${esc(c.area)}</h2>
+        <div class="grid-cursos">${outros.map(cardCurso).join("")}</div>
+      </div></section>` : ""}`;
+  }
+</script>
+</body>
+</html>

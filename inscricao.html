@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inscrição – Superar</title>
+  <meta name="description" content="Matrícula e inscrição 100% online na Superar: escolha o curso e preencha seus dados.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="inscricao">
+
+<section class="page-hero aurora">
+  <div class="wrap">
+    <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>Matrícula online</span>
+    <h1>Ficha de <span class="suave">inscrição.</span></h1>
+    <p>Matrícula e inscrição 100% online. Leva cerca de 5 minutos.</p>
+  </div>
+</section>
+<main class="form-page">
+  <div class="wrap form-shell">
+
+    <ol class="steps" id="steps">
+      <li class="active"><b>Etapa 1</b><span>Curso e polo</span></li>
+      <li><b>Etapa 2</b><span>Seus dados</span></li>
+      <li><b>Etapa 3</b><span>Contrato</span></li>
+      <li><b>Etapa 4</b><span>Assinatura</span></li>
+    </ol>
+
+    <form id="form" novalidate autocomplete="on">
+      <!-- campo invisível contra robôs -->
+      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <!-- ETAPA 1 -->
+      <section class="step" data-step="1">
+        <div class="panel">
+          <h2>Curso, polo e pagamento</h2>
+          <div class="fields">
+            <div class="f">
+              <label for="curso">Curso</label>
+              <select id="curso" name="curso" required></select>
+              <span class="erro">Escolha um curso.</span>
+            </div>
+            <div class="f">
+              <label for="polo">Polo</label>
+              <select id="polo" name="polo" required>
+                <option selected>Polo Educacional Palmeira dos Índios - AL</option>
+                <option disabled>Polo Educacional Arapiraca - AL (Indisponível)</option>
+                <option disabled>Polo Educacional Campo Alegre - AL (Indisponível)</option>
+                <option disabled>Polo Educacional Atalaia - AL (Indisponível)</option>
+                <option disabled>Polo Educacional Maceió - AL (Indisponível)</option>
+                <option disabled>Polo Educacional Salvador - BA (Indisponível)</option>
+                <option disabled>Polo Educacional Penedo - AL (Indisponível)</option>
+                <option disabled>Polo Educacional Santana do Ipanema - AL (Indisponível)</option>
+                <option disabled>Polo Educacional Marechal Deodoro - AL (Indisponível)</option>
+                <option disabled>Polo Educacional São Miguel dos Campos - AL (Indisponível)</option>
+                <option disabled>Polo Educacional Coruripe - AL (Indisponível)</option>
+                <option disabled>Polo Educacional União dos Palmares - AL (Indisponível)</option>
+                <option disabled>Polo Educacional Pilar - AL (Indisponível)</option>
+                <option disabled>Polo Educacional Delmiro Gouveia - AL (Indisponível)</option>
+                <option disabled>Polo Educacional Rio Largo - AL (Indisponível)</option>
+                <option disabled>Polo Educacional Teotônio Vilela - AL (Indisponível)</option>
+                <option disabled>Polo Educacional Girau do Ponciano - AL (Indisponível)</option>
+                <option disabled>Polo Educacional Maragogi - AL (Indisponível)</option>
+                <option disabled>Polo Educacional São José da Tapera - AL (Indisponível)</option>
+                <option disabled>Polo Educacional São Sebastião - AL (Indisponível)</option>
+              </select>
+              <span class="hint">Atenção: apenas o "Polo Educacional Palmeira dos Índios - AL" está disponível no momento.</span>
+            </div>
+          </div>
+          <div class="resumo-curso" id="resumoCurso" hidden></div>
+          <div class="fields" style="margin-top:20px">
+            <div class="f c3">
+              <label for="forma">Forma de pagamento</label>
+              <select id="forma" name="forma" required>
+                <option value="">Selecione</option>
+                <option>Boleto bancário</option>
+                <option>PIX</option>
+                <option>Cartão de crédito</option>
+              </select>
+              <span class="erro">Escolha a forma de pagamento.</span>
+            </div>
+            <div class="f c3">
+              <label for="vencimento">Dia de vencimento</label>
+              <select id="vencimento" name="vencimento" required>
+                <option value="">Selecione</option>
+                <option>5</option><option>10</option><option>15</option><option>20</option>
+              </select>
+              <span class="erro">Escolha o dia de vencimento.</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-nav"><span></span><button type="button" class="btn btn-primary" data-next>Continuar</button></div>
+      </section>
+
+      <!-- ETAPA 2 -->
+      <section class="step" data-step="2" hidden>
+        <div class="panel">
+          <h2>Seus dados</h2>
+          <h3>Dados do aluno</h3>
+          <div class="fields" data-grupo="aluno">
+            <div class="f c3"><label for="a_nome">Nome</label><input id="a_nome" name="nome" autocomplete="given-name" required minlength="2"><span class="erro">Informe o nome.</span></div>
+            <div class="f c3"><label for="a_sobrenome">Sobrenome</label><input id="a_sobrenome" name="sobrenome" autocomplete="family-name" required minlength="2"><span class="erro">Informe o sobrenome.</span></div>
+            <div class="f c3"><label for="a_nascimento">Data de nascimento</label><input id="a_nascimento" name="nascimento" type="date" required><span class="erro">Informe uma data válida.</span></div>
+            <div class="f c3"><label for="a_cpf">CPF</label><input id="a_cpf" name="cpf" inputmode="numeric" data-mask="cpf" required><span class="erro">CPF inválido.</span></div>
+            <div class="f"><label for="a_telefone">Tel/WhatsApp</label><input id="a_telefone" name="telefone" type="tel" inputmode="numeric" data-mask="tel" autocomplete="tel" required><span class="erro">Telefone inválido.</span></div>
+            <div class="f"><label for="a_email">Digite seu email</label><input id="a_email" name="email" type="email" autocomplete="email" required><span class="erro">E-mail inválido.</span></div>
+            <div class="f"><label for="a_pai">Nome do pai</label><input id="a_pai" name="pai"><span class="hint">Deixe em branco se não constar no documento.</span></div>
+            <div class="f"><label for="a_mae">Nome da mãe</label><input id="a_mae" name="mae" required minlength="3"><span class="erro">Informe o nome da mãe.</span></div>
+            <div class="f c2"><label for="a_rg">RG</label><input id="a_rg" name="rg" required><span class="erro">Informe o RG.</span></div>
+            <div class="f c2"><label for="a_rgOrgao">Órgão expedidor</label><input id="a_rgOrgao" name="rgOrgao" placeholder="Ex.: SSP/AL" required><span class="erro">Informe o órgão expedidor.</span></div>
+            <div class="f c2"><label for="a_rgData">Data de expedição</label><input id="a_rgData" name="rgData" type="date" required><span class="erro">Informe uma data válida.</span></div>
+          </div>
+
+          <h3>Endereço</h3>
+          <div class="fields" data-grupo="aluno">
+            <div class="f c4"><label for="a_logradouro">Endereço</label><input id="a_logradouro" name="logradouro" autocomplete="address-line1" required><span class="erro">Informe o endereço.</span></div>
+            <div class="f c2"><label for="a_numero">Número</label><input id="a_numero" name="numero" required><span class="erro">Informe o número.</span></div>
+            <div class="f c2"><label for="a_bairro">Bairro</label><input id="a_bairro" name="bairro" required><span class="erro">Informe o bairro.</span></div>
+            <div class="f c3"><label for="a_cidade">Cidade</label><input id="a_cidade" name="cidade" autocomplete="address-level2" required><span class="erro">Informe a cidade.</span></div>
+            <div class="f c1"><label for="a_uf">UF</label><select id="a_uf" name="uf" data-uf required></select><span class="erro">UF.</span></div>
+            <div class="f c2"><label for="a_cep">CEP</label><input id="a_cep" name="cep" inputmode="numeric" data-mask="cep" autocomplete="postal-code" required><span class="erro">CEP inválido.</span></div>
+            <div class="f c4"><label for="a_complemento">Complemento <span class="opt">(opcional)</span></label><input id="a_complemento" name="complemento"></div>
+          </div>
+
+          <h3>Ensino médio</h3>
+          <div class="fields" data-grupo="aluno">
+            <div class="f"><label for="a_escola">Unidade de conclusão do ensino médio</label><input id="a_escola" name="escola" placeholder="Nome da escola onde concluiu o ensino médio" required minlength="3"><span class="erro">Informe a escola.</span><span class="hint">É necessário ter concluído o ensino médio.</span></div>
+            <div class="f c2"><label for="a_escolaCidade">Cidade</label><input id="a_escolaCidade" name="escolaCidade" required><span class="erro">Informe a cidade.</span></div>
+            <div class="f c2"><label for="a_escolaUf">UF</label><select id="a_escolaUf" name="escolaUf" data-uf required></select><span class="erro">Selecione a UF.</span></div>
+            <div class="f c2"><label for="a_anoConclusao">Ano de conclusão</label><input id="a_anoConclusao" name="anoConclusao" inputmode="numeric" maxlength="4" placeholder="Ex.: 2020" required><span class="erro">Informe um ano de conclusão válido (até o ano atual).</span></div>
+          </div>
+
+          <div id="blocoResp" hidden>
+            <h3>Responsável legal</h3>
+            <div class="aviso aviso-info">Como o aluno tem menos de 18 anos, o contrato deve ser assinado pelo pai, mãe ou responsável legal (Código Civil, arts. 3º e 4º).</div>
+            <div class="fields" data-grupo="responsavel">
+              <div class="f c4"><label for="r_nome">Nome completo do responsável</label><input id="r_nome" name="nome" required minlength="5"><span class="erro">Informe o nome completo.</span></div>
+              <div class="f c2"><label for="r_parentesco">Parentesco</label>
+                <select id="r_parentesco" name="parentesco" required><option value="">Selecione</option><option>Mãe</option><option>Pai</option><option>Tutor(a)</option><option>Curador(a)</option><option>Guardião(ã)</option></select>
+                <span class="erro">Selecione.</span></div>
+              <div class="f c3"><label for="r_cpf">CPF</label><input id="r_cpf" name="cpf" inputmode="numeric" data-mask="cpf" required><span class="erro">CPF inválido.</span></div>
+              <div class="f c3"><label for="r_nascimento">Data de nascimento</label><input id="r_nascimento" name="nascimento" type="date" required><span class="erro">O responsável deve ser maior de 18 anos.</span></div>
+              <div class="f c3"><label for="r_rg">RG</label><input id="r_rg" name="rg" required><span class="erro">Informe o RG.</span></div>
+              <div class="f c3"><label for="r_rgOrgao">Órgão expedidor</label><input id="r_rgOrgao" name="rgOrgao" required><span class="erro">Informe o órgão emissor.</span></div>
+              <div class="f c3"><label for="r_email">E-mail do responsável</label><input id="r_email" name="email" type="email" required><span class="erro">E-mail inválido.</span></div>
+              <div class="f c3"><label for="r_telefone">Celular do responsável</label><input id="r_telefone" name="telefone" type="tel" inputmode="numeric" data-mask="tel" required><span class="erro">Telefone inválido.</span></div>
+              <label class="check" style="grid-column:span 6"><input type="checkbox" id="r_mesmoEndereco" checked> O responsável mora no mesmo endereço do aluno.</label>
+            </div>
+            <div class="fields" data-grupo="responsavel" id="respEndereco" hidden>
+              <div class="f c2"><label for="r_cep">CEP</label><input id="r_cep" name="cep" inputmode="numeric" data-mask="cep" required><span class="erro">CEP inválido.</span></div>
+              <div class="f c4"><label for="r_logradouro">Rua / Avenida</label><input id="r_logradouro" name="logradouro" required><span class="erro">Informe o endereço.</span></div>
+              <div class="f c2"><label for="r_numero">Número</label><input id="r_numero" name="numero" required><span class="erro">Informe o número.</span></div>
+              <div class="f c4"><label for="r_complemento">Complemento <span class="opt">(opcional)</span></label><input id="r_complemento" name="complemento"></div>
+              <div class="f c2"><label for="r_bairro">Bairro</label><input id="r_bairro" name="bairro" required><span class="erro">Informe o bairro.</span></div>
+              <div class="f c3"><label for="r_cidade">Cidade</label><input id="r_cidade" name="cidade" required><span class="erro">Informe a cidade.</span></div>
+              <div class="f c1"><label for="r_uf">UF</label><select id="r_uf" name="uf" data-uf required></select><span class="erro">UF.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-nav"><button type="button" class="btn btn-outline" data-prev>Voltar</button><button type="button" class="btn btn-primary" data-next>Gerar contrato</button></div>
+      </section>
+
+      <!-- ETAPA 3 -->
+      <section class="step" data-step="3" hidden>
+        <div class="panel">
+          <h2>Leia o contrato</h2>
+          <p class="muted">O contrato abaixo já está preenchido com os seus dados. Confira e role até o final para continuar.</p>
+          <div class="contrato-box" id="contratoBox" tabindex="0" aria-label="Texto do contrato"></div>
+          <div class="leitura-status" id="leituraStatus">Role o contrato até o final para liberar o aceite.</div>
+
+          <fieldset class="imagem-escolha">
+            <legend>Autorização facultativa de uso de imagem, voz e depoimentos</legend>
+            <p class="muted">Opcional e independente da matrícula. Sem marcação, vale como "não autorizo". Pode ser revogada a qualquer momento.<span id="imagemResp" hidden> Por ser menor de idade, a decisão é do responsável legal.</span></p>
+            <label class="check"><input type="radio" name="imagem" value="autorizo"> <span>Autorizo</span></label>
+            <label class="check"><input type="radio" name="imagem" value="nao"> <span>Não autorizo</span></label>
+          </fieldset>
+
+          <label class="check"><input type="checkbox" id="ck_contrato" disabled> <span>Li e aceito o <strong>Contrato de Prestação de Serviços Educacionais</strong> e o <strong>Quadro-Resumo da Contratação (Anexo I)</strong>.</span></label>
+          <label class="check"><input type="checkbox" id="ck_dados"> <span>Declaro que os dados informados são verdadeiros e estou ciente da <a href="privacidade.html" target="_blank">Política de Privacidade</a>.</span></label>
+          <p class="muted" style="font-size:.85rem;margin-top:8px">Encontrou algum erro nos dados? <button type="button" class="link-btn" data-goto="2">Voltar e corrigir</button></p>
+        </div>
+        <div class="form-nav"><button type="button" class="btn btn-outline" data-prev>Voltar</button><button type="button" class="btn btn-primary" data-next>Ir para assinatura</button></div>
+      </section>
+
+      <!-- ETAPA 4 -->
+      <section class="step" data-step="4" hidden>
+        <div class="panel">
+          <h2>Assinatura</h2>
+          <p class="muted" id="assinanteInfo"></p>
+          <div class="fields">
+            <div class="f"><label for="nomeAssinatura">Digite seu nome completo para confirmar</label><input id="nomeAssinatura" autocomplete="off" required><span class="erro">O nome deve ser igual ao do contratante.</span></div>
+          </div>
+          <p style="margin:20px 0 8px;font-weight:600;color:var(--ink)">Desenhe sua assinatura abaixo</p>
+          <div class="assinatura-area" id="assArea">
+            <canvas id="assCanvas" aria-label="Área para desenhar a assinatura"></canvas>
+            <div class="linha"></div>
+            <div class="placeholder" id="assPlaceholder">Use o dedo ou o mouse para assinar</div>
+          </div>
+          <div class="assinatura-tools">
+            <span class="muted">Assinatura eletrônica (MP 2.200-2/2001 e Lei 14.063/2020)</span>
+            <button type="button" class="link-btn" id="assLimpar">Limpar</button>
+          </div>
+          <div class="aviso aviso-info" style="margin-top:20px">
+            Ao clicar em <strong>Assinar e enviar</strong>, registraremos a data, a hora, o endereço IP e o dispositivo usado, e enviaremos uma cópia do contrato assinado para o seu e-mail.
+          </div>
+          <div class="aviso aviso-err" id="erroEnvio" hidden></div>
+        </div>
+        <div class="form-nav"><button type="button" class="btn btn-outline" data-prev>Voltar</button><button type="submit" class="btn btn-primary" id="btnEnviar">Assinar e enviar</button></div>
+      </section>
+    </form>
+
+    <!-- SUCESSO -->
+    <section id="sucesso" hidden>
+      <div class="panel sucesso">
+        <div class="ico-ok"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h2>Matrícula enviada!</h2>
+        <p>Protocolo <strong id="protocoloFinal"></strong></p>
+        <p class="muted" id="msgSucesso">Enviamos uma cópia do contrato assinado para o seu e-mail. Nossa equipe vai entrar em contato com os próximos passos.</p>
+        <p class="muted" style="font-size:.9rem">Você tem 7 dias para desistir sem nenhum custo (CDC, art. 49).</p>
+        <p style="margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <button class="btn btn-primary" id="btnBaixar">Baixar contrato (PDF)</button>
+          <a class="btn btn-outline" href="index.html">Voltar ao início</a>
+        </p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/cursos-data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/contrato.js"></script>
+<script src="js/inscricao.js"></script>
+</body>
+</html>

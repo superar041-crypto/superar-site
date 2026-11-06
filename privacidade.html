@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de Privacidade – Superar</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="privacidade">
+<section class="page-hero aurora">
+  <div class="wrap">
+    <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>LGPD · Lei nº 13.709/2018</span>
+    <h1>Política de <span class="suave">Privacidade.</span></h1>
+    <p>Quais dados pessoais a Superar coleta no site, para que usa e quais são os seus direitos.</p>
+  </div>
+</section>
+<main class="section">
+  <div class="wrap">
+    <article class="legal">
+
+      <h2>1. Quem é o controlador dos dados</h2>
+      <p><span data-e="razaoSocial"></span>, CNPJ <span data-e="cnpj"></span>, com sede na <span data-e="endereco"></span>, <span data-e="cidade"></span> – <span data-e="uf"></span>. Contato para assuntos de privacidade: <a data-e-mail></a>.</p>
+
+      <h2>2. Quais dados coletamos</h2>
+      <ul>
+        <li><strong>Ficha de inscrição:</strong> nome, CPF, RG, data de nascimento, nacionalidade, estado civil, escolaridade, e-mail, telefone e endereço do aluno e, quando o aluno tiver menos de 18 anos, do responsável legal.</li>
+        <li><strong>Curso e pagamento:</strong> curso escolhido, forma de pagamento e dia de vencimento.</li>
+        <li><strong>Assinatura do contrato:</strong> assinatura desenhada na tela, data e hora, endereço IP, navegador/dispositivo e os momentos de leitura e aceite.</li>
+      </ul>
+
+      <h2>3. Para que usamos (finalidade e base legal)</h2>
+      <ul>
+        <li>Realizar a matrícula, liberar o acesso ao Ambiente Virtual de Aprendizagem, organizar as aulas presenciais e emitir certificados e diplomas – <em>execução de contrato</em> (LGPD, art. 7º, V).</li>
+        <li>Cumprir obrigações da legislação educacional, civil e fiscal, como manter registros escolares – <em>obrigação legal</em> (art. 7º, II).</li>
+        <li>Comprovar a autoria e a integridade do contrato assinado eletronicamente e proteger os direitos das partes – <em>exercício regular de direitos</em> (art. 7º, VI).</li>
+      </ul>
+      <p>Não usamos seus dados para publicidade de terceiros e não vendemos dados.</p>
+
+      <h2>4. Com quem compartilhamos</h2>
+      <p>Somente na medida necessária às finalidades acima: com a plataforma de ensino a distância usada pela Superar, com órgãos educacionais quando exigido por lei e com instituições de pagamento e cobrança.</p>
+
+      <h2>5. Por quanto tempo guardamos</h2>
+      <p>Durante o curso e, depois dele, pelo prazo exigido pela legislação educacional, civil e fiscal. Registros de acesso (IP, data e hora) são guardados por no mínimo 6 meses (Marco Civil da Internet, Lei nº 12.965/2014, art. 15).</p>
+
+      <h2>6. Segurança</h2>
+      <p>O site usa conexão criptografada (HTTPS). Os dados da inscrição são enviados apenas para a equipe da Superar e uma cópia do contrato é enviada ao seu e-mail.</p>
+
+      <h2>7. Seus direitos</h2>
+      <p>Você pode, a qualquer momento e sem custo, pedir pelo e-mail <a data-e-mail></a> (LGPD, art. 18):</p>
+      <ul>
+        <li>confirmação de que tratamos seus dados e acesso a eles;</li>
+        <li>correção de dados incompletos, inexatos ou desatualizados;</li>
+        <li>anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em desacordo com a lei;</li>
+        <li>portabilidade dos dados a outro fornecedor;</li>
+        <li>informação sobre com quem compartilhamos seus dados.</li>
+      </ul>
+      <p>Você também pode apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD).</p>
+
+      <h2>8. Dados de crianças e adolescentes</h2>
+      <p>Quando o aluno tem menos de 18 anos, a inscrição é feita e o contrato é assinado pelo pai, mãe ou responsável legal, e os dados são tratados no melhor interesse do aluno (LGPD, art. 14).</p>
+
+      <h2>9. Alterações</h2>
+      <p>Esta política pode ser atualizada. A versão em vigor fica sempre publicada nesta página.</p>
+    </article>
+  </div>
+</main>
+<script src="js/main.js"></script>
+<script>
+  document.querySelectorAll("[data-e]").forEach((el) => (el.textContent = ESCOLA[el.dataset.e]));
+  document.querySelectorAll("[data-e-mail]").forEach((el) => { el.href = "mailto:" + ESCOLA.email; el.textContent = ESCOLA.email; });
+</script>
+</body>
+</html>

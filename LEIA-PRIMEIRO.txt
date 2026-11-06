@@ -1,0 +1,62 @@
+SITE SUPERAR – CURSOS E TREINAMENTOS
+Versão 1 para avaliação – 28/10/2026
+====================================
+
+COMO ABRIR
+1. Descompacte o arquivo .zip.
+2. Abra a pasta e dê dois cliques em "index.html".
+   (Precisa de internet para carregar as fontes e o gerador de PDF.)
+
+O QUE AVALIAR
+- Home (index.html): visual, textos, carrossel de cursos, animações.
+- Cursos (cursos.html): lista dos 22 cursos com filtro por área e busca.
+- Página de cada curso: clique em qualquer curso. Confira descrição,
+  grade curricular, carga horária e preço.
+- Inscrição (inscricao.html): preencha com dados de teste, leia o
+  contrato, assine na tela e baixe o PDF gerado.
+- Política de Privacidade (privacidade.html).
+
+IMPORTANTE SOBRE ESTA VERSÃO
+- É uma versão de demonstração. Na inscrição, o contrato em PDF é gerado
+  normalmente, mas NENHUM E-MAIL É ENVIADO. O envio por e-mail funciona
+  quando o site estiver publicado na hospedagem.
+- Para testar a inscrição, use um CPF válido de teste, por exemplo
+  529.982.247-25.
+- Testar com data de nascimento de menor de 18 anos mostra o campo do
+  responsável legal, que passa a ser quem assina o contrato.
+
+PONTOS QUE PRECISAM DE DECISÃO
+1. Preços: o site usa a tabela em PDF (R$ 130 / R$ 140 / R$ 160 / R$ 180).
+   O site antigo mostrava R$ 125 / R$ 145 / R$ 165 / R$ 185. Qual vale?
+2. Formas de pagamento (boleto, PIX, cartão) e dias de vencimento
+   (5, 10, 15, 20): confirmar.
+3. E-mail de contato: o site usa contato@superar.com.
+4. Cargas horárias e grades: o site e o contrato usam a carga total e as
+   disciplinas das Matrizes Curriculares. Ajustes feitos sobre o PDF:
+   - Finanças, "Gestão Financeira": o PDF diz 40 + 40 = 40; usamos 80h
+     (só assim o curso fecha em 900h);
+   - a 1ª disciplina ("Introdução ao Curso... em Técnico em ...") cita
+     outro curso em alguns casos (ex.: Logística diz "Finanças"); no site
+     ela usa o nome do próprio curso.
+   No próprio PDF, as disciplinas não somam o total informado em 6 cursos:
+   Secretariado, Guia de Turismo, Marketing e Vendas (somam 896h, total
+   900h) e Eletrotécnica e Meio Ambiente (somam 1.356h, total 1.376h).
+   A coordenação precisa dizer qual disciplina está com a hora errada.
+5. Contrato: o site usa o texto do novo "Contrato de Prestação de
+   Serviços Educacionais" (Word) sem alterações. Mudam só os dados do
+   aluno. O Anexo I (Quadro-Resumo) segue as regras do arquivo "ANEXO I
+   AUTOMACAO_SUPERAR.pdf" (versão de 06/11/2026). Faltam:
+   a) duração: o término do curso e do AVA usa a duração MÁXIMA das
+      Matrizes Curriculares (12, 24 ou 30 meses). Para usar a mínima,
+      troque duracaoMeses em js/cursos-data.js;
+   b) confirmar se o ato de autorização dos cursos é a Resolução nº
+      58/2026 – CEE/AL (é o que aparece hoje no Anexo I);
+   c) "Outro canal" de atendimento (sai em branco);
+   d) e-mail de atendimento: o PDF do Anexo usa contato@superargct.com.br,
+      o site usa contato@superar.com. Qual vale?
+6. Regulamento de Trancamento: o contrato novo diz que o trancamento não
+   tem taxa (cláusula 12.2), mas o regulamento cobra R$ 250 no 2º
+   trancamento. O link do regulamento no rodapé deve continuar?
+
+COMO ENVIAR COMENTÁRIOS
+Anote a página e o trecho (ou mande um print) com a sugestão.
