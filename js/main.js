@@ -20,6 +20,15 @@ window.ESCOLA = {
   },
 };
 
+// Prévia para aprovação (GitHub Pages, Netlify etc.): pede ao Google para não indexar.
+// Não vale no domínio oficial.
+if (/\.(github\.io|netlify\.app|pages\.dev|vercel\.app)$/.test(location.hostname)) {
+  const m = document.createElement("meta");
+  m.name = "robots";
+  m.content = "noindex, nofollow";
+  document.head.appendChild(m);
+}
+
 window.fmtBRL = (v) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 window.esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
